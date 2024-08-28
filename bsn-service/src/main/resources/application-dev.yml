@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: bsn-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/book_social_network
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+    mail:
+      host: localhost
+      port: 1025
+      username: hari
+      password: hari
+      properties:
+        mail:
+          smtp:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000

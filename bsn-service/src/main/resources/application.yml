@@ -1,12 +1,13 @@
 spring:
-  application:
-    name: bsn-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/book_social_network
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 50MB
 
-jpa:
-  hibernate:
-    ddl-auto: update
+springdoc:
+  default-produces-media-type: application/json
+
+server:
+  servlet:
+    context-path: /api/
