@@ -1,6 +1,5 @@
-package com.demo.project.role;
+package com.demo.project.user;
 
-import com.demo.project.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
