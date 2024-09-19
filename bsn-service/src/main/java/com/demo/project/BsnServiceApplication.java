@@ -22,9 +22,7 @@ public class BsnServiceApplication {
 	public CommandLineRunner runner(RoleRepository roleRepo) {
 		return args -> {
 			if (roleRepo.findByName("USER").isEmpty()) {
-				roleRepo.save(
-						Role.builder().name("USER").build()
-				);
+				roleRepo.save(Role.builder().name("USER").build());
 			}
 		};
 	}
