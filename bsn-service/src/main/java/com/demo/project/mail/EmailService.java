@@ -24,8 +24,8 @@ public class EmailService {
     private final SpringTemplateEngine templateEngine;
 
     @Async
-    public void sendEmail(
-            String to, String username, EmailTemplateName emailTemplate, String confirmationUrl, String activationCode, String subject
+    public void sendEmail(String to, String username, EmailTemplateName emailTemplate, String confirmationUrl,
+                          String activationCode, String subject
     ) throws MessagingException {
         String templateName;
         if (emailTemplate == null)
@@ -51,7 +51,6 @@ public class EmailService {
         helper.setText(template, true);
 
         mailSender.send(mimeMessage);
-
     }
 
 }
