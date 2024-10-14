@@ -3,15 +3,14 @@ package com.demo.project.entity;
 import com.demo.project.common.BaseEntity;
 import com.demo.project.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -41,5 +40,17 @@ public class Book extends BaseEntity {
     @OneToMany(mappedBy = "book")
     private List<BookTransactionHistory> histories;
 
+    @Transient
+    public double getRate() {
+        if (feedbacks == null || feedbacks.isEmpty()) {
+            return 0.0;
+        }
+        var rate = this.feedbacks.stream()
+                .mapToDouble(Feedback::getNote)
+                .average()
+                .orElse(0.0);
+        double roundedRate = Math.round(rate * 10.0) / 10.0;
+        return roundedRate;
+    }
 
 }
