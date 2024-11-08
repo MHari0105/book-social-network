@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 
 public interface BookService {
 
-    Integer save(BookRequest request, Authentication connectedUser);
+    Integer saveBook(BookRequest request, Authentication connectedUser);
     BookResponse findById(Integer bookId);
 
 }
