@@ -1,7 +1,7 @@
 package com.demo.project.mapper;
 
-import com.demo.project.dto.BookRequest;
-import com.demo.project.dto.BookResponse;
+import com.demo.project.request.BookRequest;
+import com.demo.project.response.BookResponse;
 import com.demo.project.entity.Book;
 import org.springframework.stereotype.Service;
 

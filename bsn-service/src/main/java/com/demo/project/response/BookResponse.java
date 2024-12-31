@@ -1,9 +1,8 @@
-package com.demo.project.dto;
+package com.demo.project.response;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
