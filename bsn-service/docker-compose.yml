@@ -10,22 +10,19 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - 3307:3306
+      - 3306:3306
     networks:
       - spring-demo
     restart: unless-stopped
-
   mail-dev:
     container_name: mail-dev-bsn
     image: maildev/maildev
     ports:
       - 1080:1080
       - 1025:1025
-
 networks:
   spring-demo:
     driver: bridge
-
 volumes:
   mysql_data:
     driver: local
